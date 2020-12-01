@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw.io</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="main-container">
+        <nav>
+            <div class="logo">Draw.io</div>
+            <div class="guess-word">snake</div>
+        </nav>
+        <div class="users">
+            <ul class="users-ul fa-ul">
+                <li><i class="fa-li fa fa-user fa-2x"></i><span class="user correct-user">Aamir</span> <span class="score">100</span></li>
+                <hr>
+                <li><i class="fa-li fa fa-user fa-2x"></i>Asif <span class="score">90</span></li>
+                <hr>
+                <li><i class="fa-li fa fa-user fa-2x"></i>Harsh <span class="score">80</span></li>
+                <hr>
+                <li><i class="fa-li fa fa-user fa-2x"></i>Joel <span class="score">70</span></li>
+                <hr>
+                <li><i class="fa-li fa fa-user fa-2x"></i>Mandar <span class="score">60</span></li>
+                <hr>
+                <li><i class="fa-li fa fa-user fa-2x"></i>Rahul <span class="score">50</span></li>
+                <hr>
+                <li><i class="fa-li fa fa-user fa-2x"></i>Rohan<span class="score">40</span></li>
+                <hr>
+            </ul>
+        </div>
+        <canvas id="canvas" height="420" width="700"></canvas>
+        <!-- <div id="tools">
+            <div class="color-pallete">
+                <div id="red"></div>
+                <div id="green"></div>
+                <div id="blue"></div>
+            </div>
+            <i class="fa fa-eraser"></i> 
+        </div> -->
+        <div class="chat">
+            <ul class="chat-ul">
+            </ul>
+            <form class="input">
+                <input type="text" id="chat-inp" placeholder="Type your guess here">
+                <input type="submit" id="submit" value="" style="display: none;">
+            </form>
+        </div>
+    </div>
+    <script src="./js/canvas.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #1a1a2e;
+    color: white;
+    display: grid;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-container{
+    margin-top: 3em;
+    height: 80vh;
+    width: 80vw;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 3.5fr 1fr;
+    grid-template-rows: 1fr 7fr;
+    grid-template-areas: 
+    "nav nav nav"
+    "lside canvas rside";
+    /* ". tools ."; */
+    grid-gap: 10px;
+}
+
+/* Navbar */
+
+nav{
+    border-radius: 10px;
+    grid-area: nav;
+    background-color: #e94560;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+.logo, .guess-word{
+    font-size: 1.5em;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guess-word{
+    text-decoration: underline;
+    letter-spacing: 6px;
+    break-inside: avoid-column;
+}
+
+/* Canvas */
+
+#canvas{
+    grid-area: canvas;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Tool-box below canvas */
+
+#tools{
+    position: relative;
+    border: 1px solid white;
+    grid-area: tools;
+    height: 2rem;
+    border-radius: 10px;
+}
+
+.color-pallete{
+    position: absolute;
+    width: 30%;
+    /* border: 2px solid white; */
+    height: 100%;
+    display: flex;
+}
+
+#red, #green, #blue{
+    width: 30%;
+    height: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#red:hover, #green:hover, #blue:hover{
+    opacity: 1;
+}
+
+#red{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: red;
+}
+
+#green{
+    background-color: green;
+}
+
+#blue{
+    background-color: blue;
+}
+
+/* Left side user div */
+
+.users{
+    grid-area: lside;
+    color: #ffffff;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.users-ul{
+    position: absolute;
+    right: 0;
+    width: 70%;
+}
+
+.users-ul li{
+    font-size: 1.2rem;
+    line-height: 3em;
+}
+
+/* Add this class if the user guess the correct answer */
+
+.correct-user{
+    color: greenyellow;
+}
+
+.score{
+    color: tomato;
+    padding: 2px;
+    position: absolute;
+    font-weight: bold;
+    letter-spacing: 1px;
+    right: 0;
+}
+
+/* Right Side chat div */
+
+.chat{
+    grid-area: rside;
+    background-color: #222831;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    overflow: auto;
+}
+
+.chat-ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: auto;
+    padding: 8px;
+    overflow: auto;
+    height: 86%;
+}
+
+.chat-ul li{
+    list-style: none;
+    margin-top: 10px;
+    box-shadow: 1px 1px 10px black;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.li{
+    animation: listAdded 100ms linear;
+}
+
+@keyframes listAdded{
+    0%{
+        width: 0px;
+    }
+
+    50%{
+        width: 50%;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+.chat-ul::-webkit-scrollbar{
+    width: 8px;
+    border-radius: 20px;
+}
+
+.chat-ul::-webkit-scrollbar-track{
+    background-color: gray;
+    height: 2px;
+}
+
+.chat-ul::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 20px;
+}
+
+.chat-ul::-webkit-scrollbar-thumb:hover{
+    background-color: white;
+}
+
+.input{
+    position: sticky;
+    bottom: 0px;
+    width: 98%;
+    height: 10%;
+}
+
+#chat-inp{
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    padding-left: 2px;
+    outline: none;
+    height: 2.3em;
+    width: 100%;
+}
+
+.answer{
+    color: tomato;
+}
